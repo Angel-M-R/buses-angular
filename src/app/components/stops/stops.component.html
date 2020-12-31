@@ -1,1 +1,27 @@
-<p>stops works!</p>
+<div class="container pt-3">
+
+  <input type="text" value='' (keyup)="searchTimes(stopToSearch.value)" #stopToSearch/>
+  <input type="button" (click)="searchTimes(stopToSearch.value)" value="Buscar">
+</div>
+
+<div class="container pt-3 mr-5">
+
+    <table class="table" *ngIf="stops && stops.estado==='DATOS'; else sinEstado">
+      <thead>
+        <tr>
+          <th scope="col">Bus</th>
+          <th scope="col">Minutos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stop of stops.tiempos">
+          <td scope="row">{{stop.itinerario.linea.cod}}</td>
+          <td>{{stop.minutos}}</td>
+        </tr>
+      </tbody>
+    </table>
+  <ng-template #sinEstado>
+    <p>Sin datos</p>
+  </ng-template>
+
+</div>

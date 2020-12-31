@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StopsService } from '../../services/stops.service';
 
 @Component({
   selector: 'app-stops',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StopsComponent implements OnInit {
 
-  constructor() { }
+  stops;
+
+  constructor(public stopsService:StopsService) {
+  }
+
+  async searchTimes(stop){
+    const data = await this.stopsService.getTimes(stop);
+    console.log(data);
+    this.stops=data;
+  }
+
 
   ngOnInit(): void {
   }
+
+
 
 }

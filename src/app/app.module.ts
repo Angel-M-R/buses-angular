@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MapComponent } from './components/map/map.component';
 import { StopsComponent } from './components/stops/stops.component';
+import { StopComponent } from './components/stop/stop.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { StopsComponent } from './components/stops/stops.component';
     HeaderComponent,
     FooterComponent,
     MapComponent,
-    StopsComponent
+    StopsComponent,
+    StopComponent
   ],
   imports: [
     BrowserModule,
